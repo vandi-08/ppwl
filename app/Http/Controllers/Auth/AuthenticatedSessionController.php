@@ -16,7 +16,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        return view('auth.login');
+        return view('auth.login'); // layout Sneat login
     }
 
     /**
@@ -27,11 +27,12 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
         $request->session()->regenerate();
 
+        // Redirect sesuai role
         if (Auth::user()->role === 'admin') {
-            return redirect()->route('dashboard');
+            return redirect()->route('admin.dashboard'); // admin
         }
 
-        return redirect()->route('home');
+        return redirect()->route('dashboard'); // user biasa
     }
 
     /**
@@ -44,6 +45,6 @@ class AuthenticatedSessionController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login'); // setelah logout diarahkan ke login
     }
 }

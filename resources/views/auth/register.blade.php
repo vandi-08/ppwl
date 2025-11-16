@@ -1,4 +1,7 @@
-<x-guest-layout>
+@extends('layouts.guest')
+
+@section('content')
+
     <h4 class="mb-2">Create an account 🚀</h4>
     <p class="mb-4">Please fill the form below</p>
 
@@ -11,8 +14,7 @@
                 type="text" 
                 class="form-control" 
                 name="name" 
-                required 
-                autofocus>
+                required autofocus>
         </div>
 
         <div class="mb-3">
@@ -42,13 +44,13 @@
                 required>
         </div>
 
-        <button class="btn btn-primary d-grid w-100">
-            Register
-        </button>
+        <button class="btn btn-primary d-grid w-100">Register</button>
 
         <p class="text-center mt-3">
             Already have an account?
             <a href="{{ route('login') }}">Login</a>
         </p>
+
     </form>
-</x-guest-layout>
+
+@endsection
