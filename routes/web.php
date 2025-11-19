@@ -3,18 +3,19 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\AdminMiddleware;
-use App\Http\Controllers\ProductController;   // <-- TAMBAH INI untuk resource produk
+use App\Http\Controllers\ProductController;  
+use App\Http\Controllers\CategoryController;  
 
 // =============================
 // Home (Halaman Utama Dashboard Sneat)
 // =============================
 Route::get('/', function () {
-    return view('home');   // => resources/views/home.blade.php
+    return view('home');
 })->name('home');
 
 
 // =============================
-// Dashboard User Biasa
+// Dashboard User
 // =============================
 Route::get('/dashboard', function () {
     return view('dashboard'); // layout app.blade.php
@@ -30,10 +31,17 @@ Route::get('/admin/dashboard', function () {
 
 
 // =============================
-// CRUD Produk (MODUL SNEAT)
+// CRUD Produk
 // =============================
 // Route otomatis: index, create, store, show, edit, update, destroy
 Route::resource('/products', ProductController::class);
+
+
+// =============================
+// CRUD Category
+// =============================
+Route::resource('/category', CategoryController::class);
+
 
 
 // =============================

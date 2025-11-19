@@ -59,5 +59,37 @@
 
   <script async defer src="https://buttons.github.io/buttons.js"></script>
 
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  @if(session('success'))
+  <script>
+      Swal.fire({
+          icon: 'success',
+          title: 'Berhasil!',
+          text: "{{ session('success') }}"
+      })
+  </script>
+  @endif
+
+  <!-- Delete Confirmation -->
+  <script>
+    function deleteConfirm(id) {
+        Swal.fire({
+            title: 'Apakah kamu yakin?',
+            text: "Data tidak dapat dikembalikan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Ya, hapus!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('delete-form-' + id).submit();
+            }
+        });
+    }
+  </script>
+
 </body>
 </html>

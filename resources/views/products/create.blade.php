@@ -37,6 +37,28 @@
               </div>
             </div>
 
+            <!-- Kategori -->
+            <div class="row mb-3">
+              <label class="col-sm-2 col-form-label">Kategori</label>
+              <div class="col-sm-10">
+                <div class="input-group input-group-merge">
+                  <span class="input-group-text"><i class="bx bx-list-ul"></i></span>
+                  <select name="kategori_id" class="form-select @error('kategori_id') is-invalid @enderror">
+                    <option value="">-- Pilih Kategori --</option>
+                    @foreach($categories as $cat)
+                      <option value="{{ $cat->id }}"
+                        {{ old('kategori_id') == $cat->id ? 'selected' : '' }}>
+                        {{ $cat->nama }}
+                      </option>
+                    @endforeach
+                  </select>
+                </div>
+                @error('kategori_id')
+                  <div class="text-danger small">{{ $message }}</div>
+                @enderror
+              </div>
+            </div>
+
             <!-- Nama Produk -->
             <div class="row mb-3">
               <label class="col-sm-2 col-form-label">Nama</label>

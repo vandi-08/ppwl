@@ -20,6 +20,7 @@
 </head>
 
 <body>
+
 <div class="layout-wrapper layout-content-navbar">
   <div class="layout-container">
 
@@ -43,12 +44,46 @@
   <div class="layout-overlay layout-menu-toggle"></div>
 </div>
 
+{{-- JS VENDOR --}}
 <script src="{{ asset('assets/vendor/libs/jquery/jquery.js') }}"></script>
 <script src="{{ asset('assets/vendor/libs/popper/popper.js') }}"></script>
 <script src="{{ asset('assets/vendor/js/bootstrap.js') }}"></script>
 <script src="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
 <script src="{{ asset('assets/vendor/js/menu.js') }}"></script>
 <script src="{{ asset('assets/js/main.js') }}"></script>
+
+{{-- SWEETALERT --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+{{-- SweetAlert Success --}}
+@if(session('success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Berhasil!',
+        text: '{{ session('success') }}',
+    })
+</script>
+@endif
+
+{{-- Delete Confirmation --}}
+<script>
+function deleteConfirm(id) {
+    Swal.fire({
+        title: 'Apakah kamu yakin?',
+        text: "Data tidak dapat dikembalikan!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Ya, hapus!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            document.getElementById('delete-form-'+id).submit();
+        }
+    });
+}
+</script>
 
 </body>
 </html>

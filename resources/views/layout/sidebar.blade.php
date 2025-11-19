@@ -2,7 +2,7 @@
   <div class="app-brand demo">
     <a href="/" class="app-brand-link">
       <span class="app-brand-logo demo">
-        <!-- (LOGO SVG MU TADI...) -->
+        <!-- (LOGO SVG) -->
       </span>
       <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
     </a>
@@ -29,6 +29,15 @@
       <span class="menu-header-text">Master</span>
     </li>
 
+    <!-- MENU CATEGORY -->
+    <li class="menu-item">
+      <a href="{{ route('category.index') }}" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-category"></i>
+        <div data-i18n="Basic">Kategori</div>
+      </a>
+    </li>
+
+    <!-- KATALOG PRODUK -->
     <li class="menu-item">
       <a href="javascript:void(0)" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-store"></i>
