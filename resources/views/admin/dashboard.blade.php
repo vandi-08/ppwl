@@ -4,6 +4,10 @@
 
 @section('content')
 
+<<<<<<< HEAD
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h1>Selamat datang di halaman Dashboard UTS PPWL</h1>
+=======
 <h1 class="text-3xl font-bold mb-8">Dashboard Admin </h1>
 
 <!-- STAT CARDS -->
@@ -54,6 +58,7 @@
        class="bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-500 transition">
         Kelola Aktivitas
     </a>
+>>>>>>> 1394cbb (Add Laravel project files)
 </div>
 
 @endsection
