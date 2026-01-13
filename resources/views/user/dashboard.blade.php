@@ -1,18 +1,8 @@
-<<<<<<< HEAD
-@extends('layouts.user.app')
-=======
 @extends('user.layout')
->>>>>>> 1394cbb (Add Laravel project files)
 
 @section('title', 'Dashboard')
 
 @section('content')
-<<<<<<< HEAD
-<div class="container py-5">
-    <h1>Dashboard User</h1>
-    <p>Halaman setelah login.</p>
-</div>
-=======
 
 <style>
 /* Smooth entrance animation */
@@ -295,5 +285,4 @@ new Chart(document.getElementById('moodChart'), {
 });
 </script>
 
->>>>>>> 1394cbb (Add Laravel project files)
 @endsection

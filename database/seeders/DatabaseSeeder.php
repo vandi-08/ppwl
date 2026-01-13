@@ -17,9 +17,7 @@ class DatabaseSeeder extends Seeder
 
         // Panggil AdminSeeder agar akun admin dibuat
         $this->call(AdminSeeder::class);
-=======
         // Seeder aktivitas
         $this->call(ActivitySeeder::class);
->>>>>>> 1394cbb (Add Laravel project files)
     }
 }
